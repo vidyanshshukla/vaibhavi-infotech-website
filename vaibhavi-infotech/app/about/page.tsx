@@ -31,7 +31,7 @@ export default function AboutPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
             <div style={{ display: 'inline-block', fontFamily: 'Syne,sans-serif', fontSize: 11, fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#c9a84c', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.25)', padding: '5px 14px', marginBottom: 20 }}>About Us</div>
             <h1 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 'clamp(36px, 5vw, 64px)', color: '#f8f9fc', maxWidth: 700 }}>
-              8+ Years Powering India's Digital Infrastructure
+              12+ Years Powering India's Digital Infrastructure
             </h1>
             <div style={{ width: 60, height: 3, background: 'linear-gradient(90deg, #c9a84c, #e8c97a)', margin: '24px 0' }} />
             <p style={{ color: '#8892a4', fontSize: 18, maxWidth: 620, lineHeight: 1.8 }}>
