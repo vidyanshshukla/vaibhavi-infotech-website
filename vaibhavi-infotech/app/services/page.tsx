@@ -13,24 +13,43 @@ export default function ServicesPage() {
   return (
     <>
       <Navbar />
-      <div style={{ paddingTop: 100 }}>
-        <div style={{ background: '#060e1a', padding: '80px 0', borderBottom: '1px solid rgba(201,168,76,0.1)' }}>
-          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
-            <div style={{ display: 'inline-block', fontFamily: 'Syne,sans-serif', fontSize: 11, fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#c9a84c', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.25)', padding: '5px 14px', marginBottom: 20 }}>Services</div>
-            <h1 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 'clamp(36px, 5vw, 64px)', color: '#f8f9fc', maxWidth: 700 }}>Complete IT Portfolio for Every Need</h1>
-            <div style={{ width: 60, height: 3, background: 'linear-gradient(90deg, #c9a84c, #e8c97a)', margin: '24px 0' }} />
-            <p style={{ color: '#8892a4', fontSize: 18, maxWidth: 580, lineHeight: 1.8 }}>From hardware procurement to cloud migration — Vaibhavi Infotech is your single-window IT solution provider.</p>
+      <div style={{ paddingTop: 80 }}>
+        {/* Header */}
+        <div style={{ padding: '80px 0', borderBottom: '1px solid rgba(217,206,178,0.2)' }}>
+          <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
+              <div style={{ width: 32, height: 2, background: 'var(--ember)' }} />
+              <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--ember)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Services</span>
+            </div>
+            <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(36px, 5vw, 56px)', color: 'var(--bark)', maxWidth: 700, letterSpacing: '-0.02em' }}>
+              Complete IT Portfolio for Every Need
+            </h1>
+            <p style={{ color: 'var(--warmgray)', fontSize: 17, maxWidth: 580, lineHeight: 1.8, marginTop: 20 }}>
+              From hardware procurement to cloud migration — Vaibhavi Infotech is your single-window IT solution provider.
+            </p>
           </div>
         </div>
+
+        {/* Grid */}
         <section style={{ padding: '80px 0' }}>
-          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+          <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
             <ServicesGrid />
           </div>
         </section>
-        <div style={{ background: '#060e1a', padding: '60px 0', textAlign: 'center', borderTop: '1px solid rgba(201,168,76,0.1)' }}>
-          <h2 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 36, color: '#f8f9fc', marginBottom: 20 }}>Need a Custom IT Solution?</h2>
-          <p style={{ color: '#8892a4', fontSize: 16, marginBottom: 36 }}>Talk to our experts and get a tailored proposal within 48 hours.</p>
-          <Link href="/contact" style={{ background: 'linear-gradient(135deg, #c9a84c, #e8c97a)', color: '#0a1628', fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 14, padding: '16px 40px', letterSpacing: '0.08em', textTransform: 'uppercase', clipPath: 'polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)' }}>Request a Proposal</Link>
+
+        {/* CTA */}
+        <div style={{ padding: '60px 0 80px', textAlign: 'center', borderTop: '1px solid rgba(217,206,178,0.2)' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 32, color: 'var(--bark)', marginBottom: 16 }}>Need a Custom IT Solution?</h2>
+          <p style={{ color: 'var(--warmgray)', fontSize: 15, marginBottom: 32 }}>Talk to our experts and get a tailored proposal within 48 hours.</p>
+          <Link href="/contact" style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            background: 'var(--bark)', color: 'var(--cream)',
+            padding: '14px 32px', borderRadius: 12, fontSize: 14, fontWeight: 600,
+            transition: 'all 0.3s',
+          }}>
+            Request a Proposal
+            <span dangerouslySetInnerHTML={{ __html: '<iconify-icon icon="lucide:arrow-right" style="font-size:16px"></iconify-icon>' }} />
+          </Link>
         </div>
       </div>
       <Footer />

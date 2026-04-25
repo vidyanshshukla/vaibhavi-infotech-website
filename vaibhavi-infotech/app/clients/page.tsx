@@ -19,33 +19,42 @@ export default function ClientsPage() {
   return (
     <>
       <Navbar />
-      <div style={{ paddingTop: 100 }}>
-        <div style={{ background: '#060e1a', padding: '80px 0', borderBottom: '1px solid rgba(201,168,76,0.1)' }}>
-          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
-            <div style={{ display: 'inline-block', fontFamily: 'Syne,sans-serif', fontSize: 11, fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#c9a84c', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.25)', padding: '5px 14px', marginBottom: 20 }}>Our Clients</div>
-            <h1 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 'clamp(36px, 5vw, 64px)', color: '#f8f9fc', maxWidth: 700 }}>Trusted by Government & Industry Leaders</h1>
-            <div style={{ width: 60, height: 3, background: 'linear-gradient(90deg, #c9a84c, #e8c97a)', margin: '24px 0' }} />
-            <p style={{ color: '#8892a4', fontSize: 18, maxWidth: 580, lineHeight: 1.8 }}>From central government departments to private trading houses — our client portfolio spans the breadth of India's public and private sector.</p>
+      <div style={{ paddingTop: 80 }}>
+        {/* Header */}
+        <div style={{ padding: '80px 0', borderBottom: '1px solid rgba(217,206,178,0.2)' }}>
+          <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
+              <div style={{ width: 32, height: 2, background: 'var(--ember)' }} />
+              <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--ember)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Our Clients</span>
+            </div>
+            <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(36px, 5vw, 56px)', color: 'var(--bark)', maxWidth: 700, letterSpacing: '-0.02em' }}>
+              Trusted by Government & Industry Leaders
+            </h1>
+            <p style={{ color: 'var(--warmgray)', fontSize: 17, maxWidth: 580, lineHeight: 1.8, marginTop: 20 }}>
+              From central government departments to private trading houses — our client portfolio spans the breadth of India&apos;s public and private sector.
+            </p>
           </div>
         </div>
 
+        {/* Client Cards */}
         <section style={{ padding: '80px 0' }}>
-          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+          <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
             <ClientCards />
           </div>
         </section>
 
-        <section style={{ padding: '80px 0', background: '#060e1a' }}>
-          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
-            <h2 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 40, color: '#f8f9fc', marginBottom: 52, textAlign: 'center' }}>What Our Clients Say</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 28 }}>
+        {/* Testimonials */}
+        <section style={{ padding: '80px 0', background: 'var(--bark)' }}>
+          <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 36, color: 'var(--cream)', marginBottom: 52, textAlign: 'center' }}>What Our Clients Say</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
               {testimonials.map((t, i) => (
-                <div key={i} style={{ background: 'rgba(17,34,64,0.7)', border: '1px solid rgba(201,168,76,0.15)', padding: '36px 32px' }}>
-                  <div style={{ color: '#c9a84c', fontSize: 36, fontFamily: 'Syne,sans-serif', lineHeight: 1, marginBottom: 20 }}>"</div>
-                  <p style={{ color: '#ccd6f6', fontSize: 15, lineHeight: 1.75, marginBottom: 28, fontStyle: 'italic' }}>{t.text}</p>
-                  <div style={{ borderTop: '1px solid rgba(201,168,76,0.15)', paddingTop: 20 }}>
-                    <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 14, color: '#f8f9fc' }}>{t.author}</div>
-                    <div style={{ color: '#c9a84c', fontSize: 12, marginTop: 4 }}>{t.org}</div>
+                <div key={i} style={{ background: 'var(--bark-mid)', border: '1px solid rgba(239,227,202,0.1)', borderRadius: 16, padding: '32px 28px' }}>
+                  <div style={{ color: 'var(--ember-light)', fontSize: 36, fontFamily: 'var(--font-display)', lineHeight: 1, marginBottom: 16 }}>&ldquo;</div>
+                  <p style={{ color: 'var(--cream)', fontSize: 14, lineHeight: 1.75, marginBottom: 24, fontStyle: 'italic', opacity: 0.9 }}>{t.text}</p>
+                  <div style={{ borderTop: '1px solid rgba(239,227,202,0.1)', paddingTop: 16 }}>
+                    <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 14, color: 'var(--cream)' }}>{t.author}</div>
+                    <div style={{ color: 'var(--ember-light)', fontSize: 12, marginTop: 4 }}>{t.org}</div>
                   </div>
                 </div>
               ))}
@@ -53,10 +62,19 @@ export default function ClientsPage() {
           </div>
         </section>
 
-        <div style={{ padding: '60px 0', textAlign: 'center' }}>
-          <h2 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 36, color: '#f8f9fc', marginBottom: 20 }}>Join Our Growing Client Family</h2>
-          <p style={{ color: '#8892a4', fontSize: 16, marginBottom: 36 }}>Whether you're a government body or a private institution, we have the right IT solution for you.</p>
-          <Link href="/contact" style={{ background: 'linear-gradient(135deg, #c9a84c, #e8c97a)', color: '#0a1628', fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 14, padding: '16px 40px', letterSpacing: '0.08em', textTransform: 'uppercase', clipPath: 'polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)' }}>Start a Conversation</Link>
+        {/* CTA */}
+        <div style={{ padding: '60px 0 80px', textAlign: 'center' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 32, color: 'var(--bark)', marginBottom: 16 }}>Join Our Growing Client Family</h2>
+          <p style={{ color: 'var(--warmgray)', fontSize: 15, marginBottom: 32 }}>Whether you&apos;re a government body or a private institution, we have the right IT solution for you.</p>
+          <Link href="/contact" style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            background: 'var(--bark)', color: 'var(--cream)',
+            padding: '14px 32px', borderRadius: 12, fontSize: 14, fontWeight: 600,
+            transition: 'all 0.3s',
+          }}>
+            Start a Conversation
+            <span dangerouslySetInnerHTML={{ __html: '<iconify-icon icon="lucide:arrow-right" style="font-size:16px"></iconify-icon>' }} />
+          </Link>
         </div>
       </div>
       <Footer />

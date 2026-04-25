@@ -3,48 +3,106 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#060e1a', borderTop: '1px solid rgba(201,168,76,0.15)', padding: '60px 0 30px' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 48, marginBottom: 48 }}>
+    <footer style={{ background: 'var(--bark)', color: 'var(--cream)', padding: '48px 0 0' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 40, marginBottom: 48 }} className="responsive-grid-2">
+
+          {/* Brand */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-              <div style={{ width: 36, height: 36, background: 'linear-gradient(135deg, #c9a84c, #e8c97a)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 15, color: '#0a1628', clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}>VI</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
+              <div style={{
+                width: 32, height: 32, background: 'var(--bark-light)', borderRadius: 8,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                border: '1px solid rgba(239,227,202,0.1)',
+              }}>
+                <span dangerouslySetInnerHTML={{ __html: '<iconify-icon icon="lucide:cpu" style="color:var(--cream);font-size:16px"></iconify-icon>' }} />
+              </div>
               <div>
-                <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 15, color: '#f8f9fc' }}>VAIBHAVI INFOTECH</div>
-                <div style={{ fontFamily: 'Syne,sans-serif', fontSize: 8, color: '#c9a84c', letterSpacing: '0.25em' }}>ENTERPRISE IT SOLUTIONS</div>
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 16, color: 'var(--cream)' }}>Vaibhavi</span>
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 16, color: 'var(--ember-light)' }}> Infotech</span>
               </div>
             </div>
-            <p style={{ color: '#8892a4', fontSize: 14, lineHeight: 1.7 }}>Trusted IT partner for government agencies and private institutions across India.</p>
+            <p style={{ color: 'rgba(239,227,202,0.4)', fontSize: 12, lineHeight: 1.7, marginBottom: 16 }}>
+              Trusted IT solutions provider for government institutions and private enterprises across India since 2008.
+            </p>
+            <div style={{ display: 'flex', gap: 12 }}>
+              {['linkedin', 'twitter', 'mail'].map(icon => (
+                <a key={icon} href="#" style={{
+                  width: 32, height: 32, borderRadius: 8, background: 'var(--bark-light)',
+                  border: '1px solid rgba(239,227,202,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  transition: 'border-color 0.2s',
+                }}>
+                  <span dangerouslySetInnerHTML={{ __html: `<iconify-icon icon="lucide:${icon}" style="color:rgba(239,227,202,0.5);font-size:14px"></iconify-icon>` }} />
+                </a>
+              ))}
+            </div>
           </div>
+
+          {/* Quick Links */}
           <div>
-            <h4 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 13, color: '#c9a84c', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 20 }}>Quick Links</h4>
-            {['Home', 'About', 'Services', 'Clients', 'Contact'].map(item => (
-              <Link key={item} href={`/${item === 'Home' ? '' : item.toLowerCase()}`}
-                style={{ display: 'block', color: '#8892a4', fontSize: 14, marginBottom: 10 }}
-                onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#c9a84c')}
-                onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = '#8892a4')}>{item}</Link>
-            ))}
+            <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 12, color: 'rgba(239,227,202,0.6)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 16 }}>Quick Links</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {[
+                { label: 'Home', href: '/' },
+                { label: 'About Us', href: '/about' },
+                { label: 'Our Services', href: '/services' },
+                { label: 'Clients', href: '/clients' },
+                { label: 'Contact', href: '/contact' },
+              ].map(item => (
+                <Link key={item.href} href={item.href} style={{ color: 'rgba(239,227,202,0.4)', fontSize: 14, transition: 'color 0.2s' }}
+                  onMouseEnter={e => (e.currentTarget.style.color = 'var(--ember-light)')}
+                  onMouseLeave={e => (e.currentTarget.style.color = 'rgba(239,227,202,0.4)')}
+                >{item.label}</Link>
+              ))}
+            </div>
           </div>
+
+          {/* Services */}
           <div>
-            <h4 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 13, color: '#c9a84c', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 20 }}>Services</h4>
-            {['IT Hardware Supply', 'Software Licensing', 'Network Infrastructure', 'Cybersecurity', 'Cloud Solutions', 'IT Support & AMC'].map(s => (
-              <div key={s} style={{ color: '#8892a4', fontSize: 14, marginBottom: 10 }}>{s}</div>
-            ))}
+            <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 12, color: 'rgba(239,227,202,0.6)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 16 }}>Services</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {['IT Hardware Supply', 'Software Licensing', 'Network Infrastructure', 'Cybersecurity', 'Cloud Solutions', 'IT Support & AMC'].map(s => (
+                <span key={s} style={{ color: 'rgba(239,227,202,0.4)', fontSize: 14 }}>{s}</span>
+              ))}
+            </div>
           </div>
+
+          {/* Certifications */}
           <div>
-            <h4 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 13, color: '#c9a84c', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 20 }}>Contact</h4>
-            <div style={{ color: '#8892a4', fontSize: 14, lineHeight: 2 }}>
-              <div>📧 info@vaibhaviinfotech.com</div>
-              <div>📞 +91 98765 43210</div>
-              <div>🕒 Mon–Sat, 9:00 AM – 6:00 PM</div>
+            <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 12, color: 'rgba(239,227,202,0.6)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 16 }}>Certifications</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              {['ISO 9001:2015', 'GeM Registered Seller', 'MSME Udyam Certified', 'GST Registered'].map(cert => (
+                <div key={cert} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <span dangerouslySetInnerHTML={{ __html: '<iconify-icon icon="lucide:badge-check" style="color:var(--ember-light);font-size:14px"></iconify-icon>' }} />
+                  <span style={{ color: 'rgba(239,227,202,0.4)', fontSize: 12 }}>{cert}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
-          <p style={{ color: '#8892a4', fontSize: 13 }}>© {new Date().getFullYear()} Vaibhavi Infotech. All rights reserved.</p>
-          <p style={{ color: '#8892a4', fontSize: 13 }}>Serving Government & Private Sectors Across India</p>
+
+        {/* Bottom bar */}
+        <div style={{ borderTop: '1px solid rgba(239,227,202,0.1)', padding: '24px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
+          <span style={{ color: 'rgba(239,227,202,0.3)', fontSize: 12 }}>© {new Date().getFullYear()} Vaibhavi Infotech Pvt. Ltd. All rights reserved.</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+            {['Privacy Policy', 'Terms of Service', 'Sitemap'].map(item => (
+              <a key={item} href="#" style={{ color: 'rgba(239,227,202,0.3)', fontSize: 12, transition: 'color 0.2s' }}
+                onMouseEnter={e => (e.currentTarget.style.color = 'rgba(239,227,202,0.6)')}
+                onMouseLeave={e => (e.currentTarget.style.color = 'rgba(239,227,202,0.3)')}
+              >{item}</a>
+            ))}
+          </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          footer .responsive-grid-2 { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          footer .responsive-grid-2 { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </footer>
   )
 }
