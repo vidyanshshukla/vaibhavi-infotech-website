@@ -5,19 +5,19 @@ import Footer from '../components/Footer'
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about Vaibhavi Infotech — 8+ years of delivering IT products and services to government agencies, PSUs, and private institutions across India.',
+  description: 'Learn about Vaibhavi Infotech — 12+ years of delivering IT products and services to government agencies, PSUs, and private institutions across India.',
 }
 
 export default function AboutPage() {
   const team = [
-    { name: 'Vaibhav Sharma', role: 'Founder & CEO', exp: '15+ years in enterprise IT' },
+    { name: 'Vivek Shukla', role: 'Founder & CEO', exp: '15+ years in enterprise IT' },
     { name: 'Priya Mehta', role: 'Head of Operations', exp: 'Government procurement expert' },
     { name: 'Rajesh Kumar', role: 'Technical Director', exp: 'Network & infrastructure specialist' },
     { name: 'Ankita Singh', role: 'Client Relations', exp: 'PSU & defence liaison' },
   ]
   const milestones = [
-    { year: '2016', event: 'Founded in India with a focus on government IT supply' },
-    { year: '2018', event: 'GeM portal registration & first PSU contract' },
+    { year: '2014', event: 'Founded in India with a focus on government IT supply' },
+    { year: '2016', event: 'GeM portal registration & first PSU contract' },
     { year: '2020', event: 'Expanded to cybersecurity & cloud services' },
     { year: '2022', event: 'Partnered with UK Bulk Traders & private sector clients' },
     { year: '2024', event: 'Pan-India presence — 200+ projects delivered' },
